@@ -1,29 +1,16 @@
+let arr = [1, 5, 4, 3, 2];
 
-let sorted = []
-let insertSort = (arr) => {
-  if (!arr.length) {
-    return sorted
-  }
-  if (!sorted.length) {
-    sorted = [arr.shift()];
-  }
-  let container = arr.shift()
+let insertSort = (arr) =>{
+  for (let i = 1; i < arr.length; i++) {
+    let temp = arr[i];
 
-  for (let j = sorted.length; j >= 0; j--) {
-    if (container > sorted[ j - 1 ] && container !== undefined) {
-      sorted.splice(j, 0, container)
-      insertSort(arr);
-      return sorted
+    for (let j = i - 1; j >= 0; j--) {
+      if (arr[j] > temp) {
+        arr[j + 1] = arr[j];
+        arr[j] = temp;
+      }
     }
   }
-  sorted.splice(0, 0, container);
-  insertSort(arr);
-  return sorted;
+  return arr;
 }
-
-let nums = [8, 16, 15, 42, 23, 4]
-
-insertSort(nums);
-
-
-module.exports = insertSort;
+insertSort(arr);
