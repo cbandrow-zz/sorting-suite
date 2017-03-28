@@ -14,9 +14,9 @@ describe('Bubble Sort Functionality', () => {
   })
 
   it('should sort an array of letters', () =>{
-    let numArray = ["d", "b", "a", "c"]
+    let letterArray = ["d", "b", "a", "c"]
 
-    assert.deepEqual(bubbleSort(numArray), ["a", "b", "c", "d"])
+    assert.deepEqual(bubbleSort(letterArray), ["a", "b", "c", "d"])
   })
 
 })
