@@ -1,6 +1,4 @@
-let arr = [1, 5, 4, 3, 2];
-
-const insertSort = (arr) => {
+export const insertSort = (arr) => {
 
   for (let i = 1; i < arr.length; i++) {
     let temp = arr[i];
@@ -14,6 +12,3 @@ const insertSort = (arr) => {
   }
   return arr;
 }
-insertSort(arr);
-
-module.exports = insertSort;

@@ -1,6 +1,6 @@
 let holder;
 
-const bubbleSort = (arr) => {
+export const bubbleSort = (arr) => {
   for (let i = 0; i < arr.length - 1; i++) {
     for (let j = 0; j < arr.length - 1; j++) {
       if (arr[j + 1] < arr[j]) {
@@ -12,5 +12,3 @@ const bubbleSort = (arr) => {
   }
   return arr;
 }
-
-module.exports = bubbleSort;
