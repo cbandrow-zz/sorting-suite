@@ -1,5 +1,6 @@
 const assert = require('chai').assert;
-const mergeSort = require('../scripts/mergeSort.js')
+
+import {mergeSort, mergeArrays} from '../scripts/mergeSort.js'
 
 describe('Merge Sort Functionality', () => {
 
@@ -26,10 +27,6 @@ describe('Merge Sort Functionality', () => {
 
   it('should be a function', () => {
     assert.isFunction(mergeSort);
-  })
-
-  it('should sort a small string of numbers', () => {
-    assert.equal(mergeSort);
   })
 
 })

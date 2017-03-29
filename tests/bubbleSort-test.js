@@ -28,13 +28,13 @@ describe('Bubble Sort Functionality', () => {
     assert.isFunction(bubbleSort);
   })
 
-  it('should sort a small array of numbers', () =>{
+  it('should sort an array of numbers', () =>{
     let numArray = [8, 4, 16, 15]
 
     assert.deepEqual(bubbleSort(numArray), [4, 8, 15, 16])
   })
 
-  it('should sort a small array of letters', () =>{
+  it('should sort an array of letters', () =>{
     let letterArray = ["d", "b", "a", "c"]
 
     assert.deepEqual(bubbleSort(letterArray), ["a", "b", "c", "d"])
@@ -64,13 +64,10 @@ describe('Bubble Sort Functionality', () => {
     assert.deepEqual(letterArray[10] <= letterArray[13], true);
   })
 
-  it.skip ('it should check an array of positive and negative values.', () =>{
-    let mixedArray = [5, -1, -5, 2, 50, -49, 3, 4, 7, -7]
-
-    bubbleSort(mixedArray);
-    assert.deepEqual(mixedArray[1] >= mixedArray[0], true);
-    assert.deepEqual(mixedArray[5] >= mixedArray[3], true);
-    assert.deepEqual(mixedArray[10] <= mixedArray[13], true);
+  it('it should check that the last letter comes latest in the alphabet', () =>{
+    let letterArray = randomCharacters;
+    bubbleSort(letterArray);
+    assert.deepEqual(letterArray[letterArray.length - 1] >= letterArray[letterArray.length - 2], true)
   })
 
 

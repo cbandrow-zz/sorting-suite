@@ -8,7 +8,7 @@ describe('Insertion Sort Functionality', () => {
   let possibleChars = "abcdefghijklmnopqrstuvwxyz";
 
   function ranNums() {
-    for (let i = 0; i < 20; i ++) {
+    for (let i = 0; i < 15; i ++) {
       randomNumbers.push(Math.floor(Math.random() * 100 - 1));
     }
   }
@@ -26,6 +26,48 @@ describe('Insertion Sort Functionality', () => {
 
   it('should be a function', () => {
     assert.isFunction(insertSort);
+  })
+
+  it('should sort an array of numbers', () =>{
+    let numArray = [8, 4, 16, 15]
+
+    assert.deepEqual(insertSort(numArray), [4, 8, 15, 16])
+  })
+
+  it('should sort an array of letters', () =>{
+    let letterArray = ["d", "b", "a", "c"]
+
+    assert.deepEqual(insertSort(letterArray), ["a", "b", "c", "d"])
+  })
+
+  it ('it should check an array of random numbers.', () =>{
+    let numberArray = randomNumbers
+
+    insertSort(numberArray);
+    assert.deepEqual(numberArray[1] >= numberArray[0], true);
+    assert.deepEqual(numberArray[5] >= numberArray[3], true);
+    assert.deepEqual(numberArray[10] <= numberArray[13], true);
+  })
+
+  it ('it should check the largest number is last', () =>{
+    let numberArray = randomNumbers
+    insertSort(numberArray);
+    assert.deepEqual(numberArray[numberArray.length - 1] >= numberArray[numberArray.length - 2], true)
+  })
+
+  it ('it should check an array of random letters.', () =>{
+    let letterArray = randomCharacters
+
+    insertSort(letterArray);
+    assert.deepEqual(letterArray[1] >= letterArray[0], true);
+    assert.deepEqual(letterArray[5] >= letterArray[3], true);
+    assert.deepEqual(letterArray[10] <= letterArray[13], true);
+  })
+
+  it('it should check that the last letter comes latest in the alphabet', () =>{
+    let letterArray = randomCharacters;
+    insertSort(letterArray);
+    assert.deepEqual(letterArray[letterArray.length - 1] >= letterArray[letterArray.length - 2], true)
   })
 
 })
