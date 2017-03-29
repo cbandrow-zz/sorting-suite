@@ -1,5 +1,3 @@
-let arr = [7, 2, 5, 6, 4, 3, 1, 8, 10, 11, 560, 200, 440, 232]
-
 export const mergeSort = (arr) =>{
   if (arr.length === 1) {
     return arr
@@ -8,12 +6,12 @@ export const mergeSort = (arr) =>{
   let arr1 = arr.slice(0, divide);
   let arr2 = arr.slice(divide, arr.length);
 
-  return mergeArrays(mergeSort(arr1), mergeSort(arr2))
+  return mergeArrays(mergeSort(arr1), mergeSort(arr2));
 }
 
 export const mergeArrays = (arr1, arr2) =>{
   let mergedArr = []
-  
+
   while (arr1.length && arr2.length) {
     if (arr1[0] <= arr2[0]) {
       mergedArr.push(arr1.shift())
@@ -29,5 +27,3 @@ export const mergeArrays = (arr1, arr2) =>{
   }
   return mergedArr;
 }
-
-mergeSort(arr);
