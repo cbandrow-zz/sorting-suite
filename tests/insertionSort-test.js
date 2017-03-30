@@ -1,4 +1,4 @@
-const assert = require('chai').assert;
+import {assert} from 'chai'
 import {insertSort} from '../scripts/insertionSort'
 import {ranNums, randomAlphabet} from '../scripts/randomValueGen.js'
 

@@ -1,5 +1,4 @@
-const assert = require('chai').assert;
-
+import {assert} from 'chai'
 import {mergeSort, mergeArrays} from '../scripts/mergeSort.js'
 import {ranNums, randomAlphabet} from '../scripts/randomValueGen.js'
 
@@ -77,10 +76,23 @@ describe('Merge Sort Functionality', () => {
     let letterArray = randomAlphabet(50)
     let checkLetters = mergeSort(letterArray);
 
-    assert.deepEqual(checkLetters[checkLetters.length - 1] >= checkLetters[checkLetters.length - 2], true)
+    assert.deepEqual(letterArray.length === checkLetters.length, true)
   })
 })
 
 describe('Merge Arrays testing functionality', () => {
+
+  it('should be a function', () => {
+    assert.isFunction(mergeArrays);
+  })
+
+  it('should merge two split arrays', () => {
+    let arr1 = [5]
+    let arr2 = [4]
+
+    let merged = mergeArrays(arr1, arr2);
+
+    assert.deepEqual(merged, [4, 5])
+  })
 
 })
