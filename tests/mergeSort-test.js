@@ -47,16 +47,14 @@ describe('Merge Sort Functionality', () => {
   })
 
   it ('it should check the largest number is last', () =>{
-    ranNums(1, 250, 2500)
-    let numberArray = ranNums(1, 100, 150)
+    let numberArray = ranNums(1, 500, 150)
     let checkRandoms = mergeSort(numberArray)
 
     assert.deepEqual(checkRandoms[checkRandoms.length - 1] >= checkRandoms[checkRandoms.length - 2], true)
   })
 
   it ('it should check an array of random letters.', () =>{
-    randomAlphabet(26)
-    let letterArray = randomAlphabet(1, 100, 150)
+    let letterArray = randomAlphabet(50)
     let checkLetters = mergeSort(letterArray);
 
     assert.deepEqual(checkLetters[1] >= checkLetters[0], true);
@@ -65,7 +63,6 @@ describe('Merge Sort Functionality', () => {
   })
 
   it('it should check that the last letter comes latest in the alphabet', () =>{
-    randomAlphabet(26)
     let letterArray = randomAlphabet(50)
     let checkLetters = mergeSort(letterArray);
 
